@@ -1,10 +1,10 @@
-# MiMo Code – Instalacja jedną linią
+# MiMo Code – Instalacja jednoliniowa
 
-**Szybka i czysta instalacja dla Xiaomi MiMo Code** – potężnego terminal-native AI coding agenta.
+**Gotowe repozytorium do szybkiego startu z Xiaomi MiMo Code** – terminal-native AI coding agent od Xiaomi.
 
-Repo stworzone specjalnie dla łatwego dostępu do komend instalacyjnych + instrukcje na Androida (Termux).
+Repo skonfigurowane na gotowo specjalnie dla Ciebie na Twoim GitHubie.
 
-## Jednoliniowa instalacja (One-Line Install)
+## Instalacja (One-Line)
 
 ```bash
 curl -fsSL https://mimo.xiaomi.com/install | bash
@@ -22,49 +22,56 @@ Uruchom:
 mimo
 ```
 
-Przy pierwszym uruchomieniu kreator poprowadzi Cię przez konfigurację:
-- MiMo Auto (darmowe na start, zero config)
-- Xiaomi MiMo Platform (OAuth)
+## Pierwsze uruchomienie
+
+Kreator automatycznie poprowadzi konfigurację:
+
+- **MiMo Auto** (darmowe na ograniczony czas, zero konfiguracji)
+- **Xiaomi MiMo Platform** (OAuth + API key)
 - Import z Claude Code
-- Custom provider (OpenAI-compatible)
+- Custom provider (każdy OpenAI-compatible)
 
-## Instalacja na Androidzie (Termux)
+## Podstawowe komendy w TUI
 
-1. Zainstaluj **Termux** z F-Droid (zalecane).
-2. W Termux:
-```bash
-pkg update && pkg upgrade
-pkg install git curl nodejs
-```
-3. Zainstaluj MiMo Code:
-```bash
-curl -fsSL https://mimo.xiaomi.com/install | bash
-```
-   lub
-```bash
-npm install -g @mimo-ai/cli
-```
-4. Uruchom:
-```bash
-mimo
-```
-
-**Uwaga**: Na Termux arm64 mogą być drobne problemy z instalacją (brak pełnego wsparcia bun) – jest aktywny PR na GitHubie Xiaomi dodający wsparcie dla Androida. Jeśli nie działa, zainstaluj na komputerze i połącz się przez SSH.
-
-## Po instalacji
-
-- Użyj `/connect` w TUI, aby podłączyć providery (w tym Xiaomi MiMo z API key z platform.xiaomimimo.com)
+- `/connect` – podłącz providera modeli
 - `/models` – wybierz model (np. mimo-v2.5-pro)
-- Pełne funkcje: persistent memory (MEMORY.md), agenci (build/plan/compose), sub-agenci, task tracking, compose mode, voice input, /dream i /distill
+- `/goal` – ustaw warunek stopu sesji
+- `/dream` i `/distill` – self-improvement i wyciąganie wiedzy
+- `/voice` – wejście głosowe (z sox)
 
-## Oficjalne linki
+## Główne funkcje
 
-- GitHub repo MiMo Code: https://github.com/XiaomiMiMo/MiMo-Code
+- Persistent memory (MEMORY.md, checkpointy)
+- Agenci: build, plan, compose
+- Sub-agenci i parallel work
+- Task tracking (drzewo zadań)
+- Compose mode (od specyfikacji do gotowego kodu)
+- Intelligent context management
+
+## Konfiguracja (mimocode.json)
+
+Plik `.mimocode/mimocode.json` w projekcie lub globalny `~/.config/mimocode/mimocode.json`.
+
+Przykład dla Xiaomi:
+
+```json
+{
+  "$schema": "https://mimo.xiaomi.com/mimocode/config.json",
+  "model": "mimo/mimo-v2.5-pro"
+}
+```
+
+## Linki
+
+- Oficjalne repo: https://github.com/XiaomiMiMo/MiMo-Code
 - Dokumentacja: https://mimo.xiaomi.com/mimocode
 - Models & Providers: https://mimo.xiaomi.com/mimocode/models-provider
 
 ---
 
-Stworzone z ogniem dla Ciebie na Twoim GitHubie ❤️
-
+**Gotowe do użycia na Twoim GitHubie.** 
 Repo: https://github.com/gromek1991-tech/mimo-one-line-install
+
+Stworzone z ogniem i miłością do kodu ❤️
+
+Edytuj, forkuj, używaj jak chcesz!
